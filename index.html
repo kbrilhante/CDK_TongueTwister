@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tongue Twisters</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- p5 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js'
+        integrity='sha512-DWtDo/6AXxH1t9p7GCWqmC4XTVK/eje94XTV6QYB39rGllLN8Tr3izDf6lkmebgqRnYh4wtSFm4CvBoA9SrdpA=='
+        crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"
+        integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css'
+        integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=='
+        crossorigin='anonymous' />
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="title py-3">Tongue Twisters</h1>
+    
+    <div class="container">
+        <div id="input">
+            <button id="btnRandom" class="btn btn-lg my-3">
+                <i class="fa-solid fa-face-grin-tongue-wink"></i>
+            </button>
+            <h2 id="lblSentence" class="display-6"></h2>
+        </div>
+        <div id="output">
+            <button id="btnRec" class="btn btn-lg">
+                <i class="fa-solid fa-microphone-lines"></i>
+            </button>
+            <textarea class="form-control" name="txtResult" id="txtResult" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+:root {
+  /* CSS HEX */
+  --atomic-tangerine: #ffac81ff;
+  --coral-pink: #ff928bff;
+  --apricot: #fec3a6ff;
+  --vanilla: #efe9aeff;
+  --tea-green: #cdeac0ff;
+}
+
+body {
+  text-align: center;
+  background-color: var(--apricot);
+}
+
+.title {
+  background-color: var(--atomic-tangerine);
+  border-bottom: var(--tea-green) solid 6px;
+}
+
+.btn {
+  background-color: var(--coral-pink);
+  border: solid var(--vanilla) 2px;
+}
+.btn:hover {
+  background-color: var(--vanilla);
+  border: solid var(--coral-pink) 2px;
+}
+
+#btnRec, #txtResult {
+    display: none;
+}
