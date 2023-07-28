@@ -1,4 +1,5 @@
 let btnRandom, btnRec, lblSentence, txtResult, lstTongueTwisters;
+let speechRec;
 
 function preload() {
     btnRandom = document.getElementById("btnRandom");
@@ -6,6 +7,7 @@ function preload() {
     lblSentence = document.getElementById("lblSentence");
     txtResult = document.getElementById("txtResult");
     lstTongueTwisters = loadStrings("tongueTwisters.txt");
+    speechRec = new p5.SpeechRec("en-US");
 }
 
 function setup() {
@@ -13,6 +15,7 @@ function setup() {
     noLoop();
     btnRandom.addEventListener("click", generate);
     btnRec.addEventListener("click", speechListen);
+    speechRec.onResult = speechResult;
 }
 
 function generate() {
@@ -32,6 +35,10 @@ function generate() {
     btnRec.style.display = "inline-block";
 }
 
-function speechListen() {
-    
+function speechListen(a) {
+    console.log(e);
+}
+
+function speechResult(e) {
+    console.log(e);
 }
