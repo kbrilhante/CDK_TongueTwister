@@ -37,10 +37,18 @@
             <h2 id="lblSentence" class="display-6"></h2>
         </div>
         <div>
-            <button id="btnRec" class="btn btn-lg">
-                <i class="fa-solid fa-microphone-lines"></i>
-            </button>
-            <textarea class="form-control" name="txtResult" id="txtResult" cols="30" rows="10"></textarea>
+            <div>
+                <button id="btnRec" class="btn btn-lg controls">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </button>
+                <button id="btnReset" class="btn btn-lg controls">
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+            </div>
+            <div id="output" class="output my-4">
+                <h6 class="">What you said:</h6>
+                <h5 id="txtResult" class="fs-1"></h5>
+            </div>
         </div>
     </div>
 

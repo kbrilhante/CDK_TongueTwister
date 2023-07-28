@@ -26,6 +26,6 @@ body {
   border: solid var(--coral-pink) 2px;
 }
 
-#btnRec, #txtResult {
+.controls, .output {
     display: none;
 }

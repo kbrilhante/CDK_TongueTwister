@@ -1,11 +1,13 @@
-let btnRandom, btnRec, lblSentence, txtResult, lstTongueTwisters;
+let btnRandom, btnRec, btnReset, lblSentence, txtResult, output, lstTongueTwisters;
 let speechRec;
 
 function preload() {
     btnRandom = document.getElementById("btnRandom");
     btnRec = document.getElementById("btnRec");
+    btnReset = document.getElementById("btnReset");
     lblSentence = document.getElementById("lblSentence");
     txtResult = document.getElementById("txtResult");
+    output = document.getElementById("output");
     lstTongueTwisters = loadStrings("tongueTwisters.txt");
     speechRec = new p5.SpeechRec("en-US");
 }
@@ -35,10 +37,14 @@ function generate() {
     btnRec.style.display = "inline-block";
 }
 
-function speechListen(a) {
-    console.log(e);
+function speechListen() {
+    speechRec.start();
 }
 
-function speechResult(e) {
-    console.log(e);
+function speechResult() {
+    const result = speechRec.resultString;
+    console.log(result);
+    txtResult.textContent = result;
+    output.style.display = "block";
+    btnReset.style.display = "inline-block";
 }
