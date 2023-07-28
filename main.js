@@ -89,9 +89,15 @@ function reset() {
 }
 
 function activeOn(btn) {
+    document.getElementsByClassName("controls").forEach(element => {
+        element.disabled = true;
+    });
     btn.classList.add(animationClass);
 }
 
 function activeOff(btn) {
+    document.getElementsByClassName("controls").forEach(element => {
+        element.disabled = false;
+    });
     btn.classList.remove(animationClass);
 }
