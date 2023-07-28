@@ -32,7 +32,7 @@ function setup() {
         activeOff(btnRec);
     }
     
-    speechSynth.setLang = "en-US";
+    speechSynth.setLang("en-US");
     speechSynth.onStart = () => {
         activeOn(btnPlay);
     };
