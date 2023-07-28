@@ -1,5 +1,5 @@
 let btnRandom, btnPlay, btnRec, btnReset, lblSentence, txtResult, output, lstTongueTwisters;
-let speechRec;
+let speechRec, speechSynth;
 
 function preload() {
     btnRandom = document.getElementById("btnRandom");
@@ -11,6 +11,7 @@ function preload() {
     output = document.getElementById("output");
     lstTongueTwisters = loadStrings("tongueTwisters.txt");
     speechRec = new p5.SpeechRec("en-US");
+    speechSynth = new p5.Speech("Google US English");
 }
 
 function setup() {
@@ -53,7 +54,10 @@ function speechResult() {
     btnReset.style.display = "inline-block";
 }
 
-function speakSentence() {}
+function speakSentence() {
+    const sentence = lblSentence.textContent;
+    speechSynth.speak(sentence);
+}
 
 function reset() {
     output.style.display = "none";
