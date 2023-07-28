@@ -13,7 +13,8 @@ function preload() {
     output = document.getElementById("output");
     lstTongueTwisters = loadStrings("tongueTwisters.txt");
     speechRec = new p5.SpeechRec("en-US");
-    speechSynth = new p5.Speech("Google US English");
+    // speechSynth = new p5.Speech("Google US English");
+    speechSynth = new p5.Speech();
 }
 
 function setup() {
