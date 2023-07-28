@@ -18,12 +18,22 @@ body {
 }
 
 .btn {
-  background-color: var(--coral-pink);
-  border: solid var(--vanilla) 2px;
+	box-shadow:inset 0px 1px 3px 0px var(--tea-green);
+	background:linear-gradient(to bottom, var(--atomic-tangerine) 5%, var(--coral-pink) 100%);
+	border:2px solid #efe9ae;
+	display:inline-block;
+	color:#ffffff;
+	text-shadow:0px -1px 0px #cdeac0;
 }
 .btn:hover {
-  background-color: var(--vanilla);
-  border: solid var(--coral-pink) 2px;
+  background:linear-gradient(to bottom, #ff938b 5%, #ffab81 100%);
+	background-color:#ff938b;
+  color:#ffffff;
+}
+.btn:active {
+  position:relative;
+	top:1px;
+  color:#ffffff;
 }
 
 .controls, .output {

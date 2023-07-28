@@ -1,6 +1,8 @@
 let btnRandom, btnPlay, btnRec, btnReset, lblSentence, txtResult, output, lstTongueTwisters;
 let speechRec, speechSynth;
 
+const animationClass = "fa-beat-fade";
+
 function preload() {
     btnRandom = document.getElementById("btnRandom");
     btnPlay = document.getElementById("btnPlay");
@@ -21,7 +23,22 @@ function setup() {
     btnPlay.addEventListener("click", speakSentence);
     btnRec.addEventListener("click", speechListen);
     btnReset.addEventListener("click", reset);
+
     speechRec.onResult = speechResult;
+    speechRec.onStart = () => {
+        activeOn(btnRec);
+    };
+    speechRec.onEnd = () => {
+        activeOff(btnRec);
+    }
+    
+    speechSynth.setLang = "en-US";
+    speechSynth.onStart = () => {
+        activeOn(btnPlay);
+    };
+    speechSynth.onEnd = () => {
+        activeOff(btnPlay);
+    };
 }
 
 function generate() {
@@ -66,4 +83,12 @@ function reset() {
     });
     btnRandom.style.display = "inline-block";
     lblSentence.innerHTML = "";
+}
+
+function activeOn(btn) {
+    btn.classList.add(animationClass);
+}
+
+function activeOff(btn) {
+    btn.classList.remove(animationClass);
 }
