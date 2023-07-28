@@ -53,7 +53,8 @@ function generate() {
     }
     console.log(sentence);
     lblSentence.innerHTML = sentence;
-
+    
+    lblSentence.style.display = "block";
     btnRandom.style.display = "none";
     btnRec.style.display = "inline-block";
     btnPlay.style.display = "inline-block";
@@ -77,6 +78,7 @@ function speakSentence() {
 }
 
 function reset() {
+    lblSentence.style.display = "none";
     output.style.display = "none";
     document.getElementsByClassName("controls").forEach(element => {
         element.style.display = "none";
