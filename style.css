@@ -1,49 +1,51 @@
 :root {
   /* CSS HEX */
-  --atomic-tangerine: #ffac81ff;
-  --coral-pink: #ff928bff;
-  --apricot: #fec3a6ff;
-  --vanilla: #efe9aeff;
-  --tea-green: #cdeac0ff;
+  --tea-green: #ccd5aeff;
+  --beige: #e9edc9ff;
+  --cornsilk: #fefae0ff;
+  --papaya-whip: #faedcdff;
+  --buff: #d4a373ff;
+  --bistre: #5F3C1C;
 }
 
 body {
   text-align: center;
-  background-color: var(--apricot);
+  background-color: var(--cornsilk);
+  color: #5F3C1C;
 }
 
 .title {
-  background-color: var(--atomic-tangerine);
-  border-bottom: var(--tea-green) solid 6px;
+  background-color: var(--papaya-whip);
+  border-bottom: var(--buff) solid 6px;
 }
 
 .btn {
-  box-shadow: inset 0px 1px 3px 0px var(--tea-green);
+  box-shadow: inset 0px 1px 3px 0px var(--cornsilk);
   background: linear-gradient(
     to bottom,
-    var(--atomic-tangerine) 5%,
-    var(--coral-pink) 100%
+    var(--beige) 5%,
+    var(--tea-green) 100%
   );
-  border: 2px solid var(--vanilla);
+  border: 2px solid var(--tea-green);
   display: inline-block;
-  color: #ffffff;
+  color: var(--bistre);
   text-shadow: 0px -1px 0px var(--tea-green);
 }
 
 .btn:hover {
   background: linear-gradient(
     to bottom,
-    var(--coral-pink) 5%,
-    var(--atomic-tangerine) 100%
+    var(--tea-green) 5%,
+    var(--beige) 100%
   );
-  background-color: var(--coral-pink);
-  color: #ffffff;
+  background-color: var(--papaya-whip);
+  color: var(--bistre);
 }
 
 .btn:active {
   position: relative;
   top: 1px;
-  color: #ffffff;
+  color: var(--bistre);
 }
 
 .controls,
@@ -52,7 +54,7 @@ body {
 }
 
 .sentence {
-  background-color: var(--vanilla);
+  background-color: var(--papaya-whip);
   padding: 20px;
   margin: 20px auto;
   width: fit-content;

@@ -1,25 +1,45 @@
-let btnRandom, btnPlay, btnRec, btnReset, lblSentence, txtResult, output, lstTongueTwisters;
-let speechRec, speechSynth;
+let btnLanguage, language;
+let btnRandom, btnPlay, btnRec, btnReset;
+let speechRec, speech;
 
 const animationClass = "fa-beat-fade";
 
+const languages = [
+    {
+        'language': 'English',
+        'url': './tongueTwisters.txt',
+        'lang': 'en-US',
+        'pageTitle': 'Tongue Twisters',
+        'lstTongueTwisters': [],
+    },
+    {
+        'language': 'Português',
+        'url': './mafagafos.txt',
+        'lang': 'pt-BR',
+        'pageTitle': 'Trava Línguas',
+        'lstTongueTwisters': [],
+    }
+]
+
 function preload() {
+    language = 0;
+    btnLanguage = document.getElementById("btnLanguage");
     btnRandom = document.getElementById("btnRandom");
     btnPlay = document.getElementById("btnPlay");
     btnRec = document.getElementById("btnRec");
     btnReset = document.getElementById("btnReset");
-    lblSentence = document.getElementById("lblSentence");
-    txtResult = document.getElementById("txtResult");
-    output = document.getElementById("output");
-    lstTongueTwisters = loadStrings("tongueTwisters.txt");
-    speechRec = new p5.SpeechRec("en-US");
-    // speechSynth = new p5.Speech("Google US English");
-    speechSynth = new p5.Speech();
+    speech = new p5.Speech();
+    for (let i = 0; i < languages.length; i++) {
+        languages[i].lstTongueTwisters = loadStrings(languages[i].url);
+    }
 }
 
 function setup() {
     noCanvas();
     noLoop();
+    setLanguage();
+
+    btnLanguage.addEventListener("click", changeLanguage);
     btnRandom.addEventListener("click", generate);
     btnPlay.addEventListener("click", speakSentence);
     btnRec.addEventListener("click", speechListen);
@@ -31,20 +51,19 @@ function setup() {
     };
     speechRec.onEnd = () => {
         activeOff(btnRec);
-    }
+    };
     
-    speechSynth.setLang("en-US");
-    speechSynth.onStart = () => {
+    speech.onStart = () => {
         activeOn(btnPlay);
     };
-    speechSynth.onEnd = () => {
+    speech.onEnd = () => {
         activeOff(btnPlay);
     };
 }
 
 function generate() {
-    const i = floor(random(lstTongueTwisters.length));
-    let sentence = lstTongueTwisters[i];
+    let sentence = random(languages[language].lstTongueTwisters);
+    const lblSentence = document.getElementById('lblSentence');
     if (sentence.includes("(x3)")) {
         sentence = sentence.replace(" (x3)", "");
         sentence += ";" + sentence + ";" + sentence;
@@ -74,8 +93,9 @@ function speechResult() {
 }
 
 function speakSentence() {
-    const sentence = lblSentence.textContent;
-    speechSynth.speak(sentence);
+    const sentence = document.getElementById('lblSentence').textContent;
+    console.log(sentence);
+    speech.speak(sentence);
 }
 
 function reset() {
@@ -100,4 +120,17 @@ function activeOff(btn) {
         element.disabled = false;
     });
     btn.classList.remove(animationClass);
+}
+
+function changeLanguage() {
+    language == languages.length - 1 ? language = 0 : language++;
+    setLanguage();
+}
+
+function setLanguage() {
+    const lang = languages[language]
+    document.getElementById('title').textContent = lang.pageTitle;
+    btnLanguage.textContent = lang.language;
+    speechRec = new p5.SpeechRec(lang.lang);
+    speech.setLang(lang.lang);
 }
