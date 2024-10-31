@@ -1,63 +1,54 @@
 :root {
   /* CSS HEX */
-  --tea-green: #ccd5aeff;
-  --beige: #e9edc9ff;
-  --cornsilk: #fefae0ff;
-  --papaya-whip: #faedcdff;
-  --buff: #d4a373ff;
-  --bistre: #5F3C1C;
+  --primary: #A8DADC;
+  --secondary: #457B9D;
+  --tertiary: #E63946;
+  --dark: #1D3557;
+  --light: #F1FAEE;
 }
 
 body {
   text-align: center;
-  background-color: var(--cornsilk);
-  color: #5F3C1C;
+  background-color: var(--dark);
+  color: var(--dark);
 }
 
 .title {
-  background-color: var(--papaya-whip);
-  border-bottom: var(--buff) solid 6px;
+  background-color: var(--light);
+  border-bottom: var(--tertiary) solid 6px;
 }
 
 .btn {
-  box-shadow: inset 0px 1px 3px 0px var(--cornsilk);
-  background: linear-gradient(
-    to bottom,
-    var(--beige) 5%,
-    var(--tea-green) 100%
-  );
-  border: 2px solid var(--tea-green);
+  box-shadow: inset -2px -2px 3px 0px var(--dark);
+  background-color: var(--secondary);
+  border: 2px solid var(--tertiary);
   display: inline-block;
-  color: var(--bistre);
-  text-shadow: 0px -1px 0px var(--tea-green);
+  color: var(--light);
+  text-shadow: 0px -1px 0px var(--dark);
 }
 
 .btn:hover {
-  background: linear-gradient(
-    to bottom,
-    var(--tea-green) 5%,
-    var(--beige) 100%
-  );
-  background-color: var(--papaya-whip);
-  color: var(--bistre);
+  box-shadow: inset 2px 2px 3px 0px var(--dark);
+  background-color: var(--primary);
+  border: 2px solid var(--tertiary);
+  color: var(--dark);
 }
 
 .btn:active {
   position: relative;
   top: 1px;
-  color: var(--bistre);
+  left: 1px;
 }
 
-.controls,
-.output {
-  display: none;
+.label {
+  color: var(--light);
 }
 
 .sentence {
-  background-color: var(--papaya-whip);
+  background-color: var(--primary);
   padding: 20px;
   margin: 20px auto;
   width: fit-content;
   border-radius: 20px;
-  border: 4px solid var(--tea-green);
+  border: 4px solid var(--secondary);
 }
