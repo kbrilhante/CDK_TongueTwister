@@ -14,7 +14,7 @@ Quem a paca cara compra, paca cara pagará.
 Bagre branco, branco bagre.
 A babá boba bebeu o leite do bebê.
 A mulher barbada tem barba boba babada e um barbado bobo todo babado!
-O que é que Cacá quer? Cacá quer caqui. Qual caqui que Cacá quer? Cacá quer qualquer caqui.
+O que é que Cacá quer?;Cacá quer caqui.;Qual caqui que Cacá quer?;Cacá quer qualquer caqui.
 Chega de cheiro de cera suja.
 Concluímos que chegamos à conclusão que não concluímos nada. Por isso, conclui-se que a conclusão será concluída quando todas tiverem concluído que já é tempo de concluir uma conclusão.
 Um ninho de carrapatos, cheio de carrapatinhos, qual o bom carrapateador, que o descarrapateará?
@@ -68,12 +68,12 @@ Casa suja, chão sujo. Chão sujo, casa suja.
 Brito britou de brilhantes brincando de britador.
 Luzia lustrava o lustre listrado, o lustre listrado luzia.
 Catarina canta uma canção com Carina.
-Pardal pardo, por que sempre palras? Palro sempre e palrarei, porque sou pardal pardo. O palrador d'el rei.
+Pardal pardo, por que sempre palras?;Palro sempre e palrarei, porque sou pardal pardo.; O palrador d'el rei.
 Com fé, vou a pé à Sé.
 Alô, o tatu tá aí? – Não, o tatu não tá. Mas a mulher do tatu tando, é o mesmo que o tatu tá.
 A faca afiada ficava no fundo do fogão.
 A chave do chefe Chaves está no chaveiro.
-Quando digo "digo", digo "digo". Não digo "Diogo". Quando digo "Diogo", digo "Diogo". Não digo "digo".
+Quando digo "digo", digo "digo".;Não digo "Diogo".; Quando digo "Diogo", digo "Diogo".; Não digo "digo".
 Larga a tia, lagartixa. Lagartixa, larga a tia.
 A aglomeração na gleba glacial glosava a inglesa glamorosa que glosava com o gladiador glutão.
 A hidra, a dríade e o dragão, ladrões do dromedário do Druida, foram apedrejados.
