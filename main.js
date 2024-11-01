@@ -80,12 +80,14 @@ async function getData(url) {
     const txt = await response.text();
     const data = txt.split("\n");
     for (let i = 0; i < data.length; i++) {
-        data[i] = data[i].replace("\r", "");
+        data[i] = data[i].replace("\r", "").trim();
         if (data[i].includes("(x3)")) {
             let sentence = data[i].replace("(x3)", "").trim();
             data[i] = sentence + "\n" + sentence + "\n" + sentence
         }
+        data[i] = data[i].replaceAll(";", "\n");
     }
+    console.log(data)
     return data;
 }
 
