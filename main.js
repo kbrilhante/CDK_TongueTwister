@@ -32,6 +32,12 @@ let speech, speechRec;
 
 function preload() {
     speech = new p5.Speech();
+    for (let i = 0; i < languages.length; i++) {
+        const opt = document.createElement("option");
+        opt.innerText = languages[i].language;
+        opt.value = i;
+        document.getElementById("selLanguage").appendChild(opt);
+    }
 }
 
 function setup() {
@@ -41,7 +47,7 @@ function setup() {
     setLanguage();
     setSpeech();
 
-    document.getElementById("btnLanguage").onclick = changeLanguage;
+    document.getElementById("selLanguage").onchange = changeLanguage;
     document.getElementById("btnRandom").onclick = newSentence;
     document.getElementById("btnPlay").onclick = playSentence;
     document.getElementById("btnRec").onclick = recSentence;
@@ -54,7 +60,6 @@ function setLanguage() {
     document.getElementById("divSentence").hidden = true;
     document.getElementById("divSpeech").hidden = true;
     document.getElementById("lblLanguage").innerText = "Language: " + languages[info.index].language;
-    document.getElementById("btnLanguage").innerText = languages[(info.index + 1) % languages.length].language;
     document.getElementById("title").innerText = languages[info.index].pageTitle;
     document.getElementById("btnRandom").title = languages[info.index].btnStart;
         
@@ -85,7 +90,7 @@ async function getData(url) {
 }
 
 function changeLanguage() {
-    if (++info.index == languages.length) info.index = info.index % languages.length;
+    info.index = document.getElementById("selLanguage").value;
     setLanguage();
     setSpeech();
 }
